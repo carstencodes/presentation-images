@@ -40,7 +40,7 @@ jobs:
         with:
           context: base
           push: true
-          tags: carstencodes/presentation-base:${{ matrix.alpine }}
+          tags: carstencodes-presentation-base:${{ matrix.alpine }}
           build-args: |
             ALPINE_VERSION=${{ matrix.alpine }}
       - 
@@ -50,7 +50,7 @@ jobs:
           context: build
           push: true
           target: base
-          tags: carstencodes/presentation/build/base:${{ matrix.alpine }}
+          tags: carstencodes/presentation-build-base:${{ matrix.alpine }}
           build-args: |
             ALPINE_VERSION=${{ matrix.alpine }}
       - 
@@ -60,6 +60,6 @@ jobs:
           context: build
           push: true
           target: pdf
-          tags: carstencodes/presentation/build/pdf:${{ matrix.alpine }}
+          tags: carstencodes/presentation-build-pdf:${{ matrix.alpine }}
           build-args: |
             ALPINE_VERSION=${{ matrix.alpine }}
