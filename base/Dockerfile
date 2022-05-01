@@ -26,6 +26,6 @@ WORKDIR /data
 
 ONBUILD COPY --chown=presenter:presenter . /data
 
-ONBUILD RUN bundle install && yarn set version 1.22.18 && yarn install --production && bundle exec rake build
+ONBUILD RUN bundle install && yarn set version 1.22.17 && yarn install --production && bundle exec rake build
 
 ENTRYPOINT [ "/usr/local/bin/bundle", "exec", "rake", "present:serve" ]
