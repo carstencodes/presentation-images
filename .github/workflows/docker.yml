@@ -41,7 +41,7 @@ jobs:
           - alpine: 3.15
             ruby: '3.2'
     runs-on: ubuntu-latest
-    name: Create docker containers
+    name: Create docker alpine images
     steps:
       -
         name: Checkout
@@ -83,7 +83,7 @@ jobs:
             RUBY_VERSION=${{ matrix.ruby }}
   debian:
     runs-on: ubuntu-latest
-    name: Create docker containers
+    name: Create docker debian images
     steps:
       -
         name: Checkout
