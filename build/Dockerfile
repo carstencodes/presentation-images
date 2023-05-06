@@ -1,5 +1,5 @@
 ARG ALPINE_VERSION
-FROM ruby:2.7-alpine${ALPINE_VERSION} as base
+FROM ruby:2.7-alpine${ALPINE_VERSION} AS base
 
 RUN apk add --no-cache yarn gcc g++ make musl-dev \
     && mkdir -p /data /home/presentation \
@@ -14,7 +14,7 @@ WORKDIR /data
 
 VOLUME [ "/data" ]
 
-FROM base as pdf
+FROM base AS pdf
 
 USER root:root
 
