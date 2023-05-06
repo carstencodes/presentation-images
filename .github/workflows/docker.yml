@@ -17,29 +17,29 @@ jobs:
       matrix:
         include:
           - alpine: 3.17
-            ruby: 2.7
+            ruby: '2.7'
           - alpine: 3.17
-            ruby: 3.0
+            ruby: '3.0'
           - alpine: 3.17
-            ruby: 3.1
+            ruby: '3.1'
           - alpine: 3.17
-            ruby: 3.2
+            ruby: '3.2'
           - alpine: 3.16
-            ruby: 2.7
+            ruby: '2.7'
           - alpine: 3.16
-            ruby: 3.0
+            ruby: '3.0'
           - alpine: 3.16
-            ruby: 3.1
+            ruby: '3.1'
           - alpine: 3.16
-            ruby: 3.2
+            ruby: '3.2'
           - alpine: 3.15
-            ruby: 2.7
+            ruby: '2.7'
           - alpine: 3.15
-            ruby: 3.0
+            ruby: '3.0'
           - alpine: 3.15
-            ruby: 3.1
+            ruby: '3.1'
           - alpine: 3.15
-            ruby: 3.2
+            ruby: '3.2'
     runs-on: ubuntu-latest
     name: Create docker containers
     steps:
