@@ -55,7 +55,7 @@ jobs:
       -
         name: Login to DockerHub
         uses: docker/login-action@v1
-        if: "{{ github.ref_type == 'branch' && github.ref_name == 'main' }}"
+        if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
         with:
           username: ${{ secrets.DOCKER_USER_NAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
@@ -64,7 +64,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: build
-          push: "{{ github.ref_type == 'branch' && github.ref_name == 'main' }}"
+          push: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
           target: base
           tags: carstencodes/presentation-build-base:${{ matrix.alpine }}-ruby${{ matrix.ruby }}
           build-args: |
@@ -75,7 +75,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: build
-          push: "{{ github.ref_type == 'branch' && github.ref_name == 'main' }}"
+          push: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
           target: pdf
           tags: carstencodes/presentation-build-pdf:${{ matrix.alpine }}-${{ matrix.ruby }}
           build-args: |
@@ -97,7 +97,7 @@ jobs:
       -
         name: Login to DockerHub
         uses: docker/login-action@v1
-        if: "{{ github.ref_type == 'branch' && github.ref_name == 'main' }}"
+        if: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
         with:
           username: ${{ secrets.DOCKER_USER_NAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
@@ -106,5 +106,5 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: base
-          push: "{{ github.ref_type == 'branch' && github.ref_name == 'main' }}"
+          push: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
           tags: carstencodes/presentation-base:bullseye-slim
