@@ -49,7 +49,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - 
         name: Build build basic images with alpine ${{ matrix.alpine }} and Ruby ${{ matrix.ruby }}
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: build
           push: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
@@ -60,7 +60,7 @@ jobs:
             RUBY_VERSION=${{ matrix.ruby }}
       - 
         name: Build build pdf images with alpine ${{ matrix.alpine }} and Ruby ${{ matrix.ruby }}
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: build
           push: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
@@ -91,7 +91,7 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
       - 
         name: Build presentation base images with debian bullseye-slim
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v6
         with:
           context: base
           push: ${{ github.ref_type == 'branch' && github.ref_name == 'main' }}
